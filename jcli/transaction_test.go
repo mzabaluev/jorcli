@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/rinor/jorcli/jcli"
+	"github.com/mzabaluev/jorcli/jcli"
 )
 
 func ExampleTransactionNew_staging() {

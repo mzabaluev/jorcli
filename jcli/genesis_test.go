@@ -3,7 +3,7 @@ package jcli_test
 import (
 	"testing"
 
-	"github.com/rinor/jorcli/jcli"
+	"github.com/mzabaluev/jorcli/jcli"
 )
 
 // TODO: Improve test

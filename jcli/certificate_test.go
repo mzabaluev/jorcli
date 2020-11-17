@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/rinor/jorcli/jcli"
+	"github.com/mzabaluev/jorcli/jcli"
 )
 
 func ExampleCertificateNewStakePoolRegistration() {

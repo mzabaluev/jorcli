@@ -3,7 +3,7 @@ package jcli_test
 import (
 	"fmt"
 
-	"github.com/rinor/jorcli/jcli"
+	"github.com/mzabaluev/jorcli/jcli"
 )
 
 func ExampleVotesCRSGenerate() {
