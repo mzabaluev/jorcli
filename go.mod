@@ -1,3 +1,3 @@
-module github.com/rinor/jorcli
+module github.com/mzabaluev/jorcli
 
 go 1.14
