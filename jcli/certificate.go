@@ -8,7 +8,7 @@ import (
 
 // CertificateGetStakePoolID - get the stake pool id from the given stake pool registration certificate.
 //
-//  [STDIN] | jcli certificate get-stake-pool-id [<FILE_INPUT>] [<FILE_OUTPUT>] | [STDOUT]
+//  [STDIN] | jcli certificate show stake-pool-id [<FILE_INPUT>] [<FILE_OUTPUT>] | [STDOUT]
 func CertificateGetStakePoolID(
 	stdinCertSigned []byte,
 	inputFile string,
@@ -18,13 +18,13 @@ func CertificateGetStakePoolID(
 		return nil, fmt.Errorf("%s : EMPTY and parameter missing : %s", "stdinCertSigned", "inputFile")
 	}
 
-	arg := []string{"certificate", "get-stake-pool-id"}
+	arg := []string{"certificate", "show", "stake-pool-id"}
 	if inputFile != "" {
-		arg = append(arg, inputFile) // TODO: UPSTREAM unify with "--input" as other file input commands
+		arg = append(arg, "--input", inputFile)
 		stdinCertSigned = nil
 	}
 	if outputFile != "" && inputFile != "" {
-		arg = append(arg, outputFile) // TODO: UPSTREAM unify with "--output" as other file output commands
+		arg = append(arg, "--output", outputFile)
 	}
 
 	out, err := jcli(stdinCertSigned, arg...)
@@ -268,7 +268,7 @@ func CertificateNewVotePlan(
 
 // CertificateGetVotePlanID - get the vote plan id from the given vote plan certificate.
 //
-//  [STDIN] | jcli certificate get-vote-plan-id [<FILE_INPUT>] [<FILE_OUTPUT>] | [STDOUT]
+//  [STDIN] | jcli certificate show vote-plan-id [<FILE_INPUT>] [<FILE_OUTPUT>] | [STDOUT]
 func CertificateGetVotePlanID(
 	stdinCert []byte,
 	inputFile string,
@@ -278,13 +278,13 @@ func CertificateGetVotePlanID(
 		return nil, fmt.Errorf("%s : EMPTY and parameter missing : %s", "stdinCert", "inputFile")
 	}
 
-	arg := []string{"certificate", "get-vote-plan-id"}
+	arg := []string{"certificate", "show", "vote-plan-id"}
 	if inputFile != "" {
-		arg = append(arg, inputFile) // TODO: UPSTREAM unify with "--input" as other file input commands
+		arg = append(arg, "--input", inputFile)
 		stdinCert = nil
 	}
 	if outputFile != "" && inputFile != "" {
-		arg = append(arg, outputFile) // TODO: UPSTREAM unify with "--output" as other file output commands
+		arg = append(arg, "--output", outputFile)
 	}
 
 	out, err := jcli(stdinCert, arg...)
